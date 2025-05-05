@@ -15,3 +15,4 @@ HTML (Structuring the content)
 CSS (Styling and animations)
 
 JavaScript (For interactivity and animations) /portfolio-project │── /src │ ├── App.js # Main React component │ ├── App.css # Styling for the UI │ ├── index.js # Entry point for React │── /public │ ├── index.html # Main HTML file │── package.json # Project dependencies git clone
+h
