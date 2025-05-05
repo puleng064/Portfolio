@@ -1,0 +1,358 @@
+/* Include your CSS content here. For example: */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #181818;
+    color: #ffffff;
+}
+
+/* Add the rest of your CSS here */
+main {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
+    padding: 15px;
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4caf50; /* Highlight color */
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: #4caf50; /* Green text color */
+}
+
+.menu li:hover,
+.menu li.active {
+    background-color: #333;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.section-box {
+    display: none; /* Initially hide all sections */
+    position: relative; /* Position relative for corner decorations */
+    padding: 20px; /* Padding for the section */
+}
+
+.active-slide {
+    display: block; /* Show active section */
+}
+
+h2 {
+    color: #4caf50; /* Highlight color */
+    margin: 0; /* Remove margin */
+}
+
+.web-developer {
+    font-weight: bold;
+    font-style: italic;
+    color: #4caf50; /* Green text color */
+    padding: 15px; /* Spacing around the text */
+}
+
+.skill-container {
+    width: 100%; /* Ensure it takes all available space */
+    margin-bottom: 20px;
+}
+
+.skill {
+    background: #333; /* Dark background */
+    border-radius: 2px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    width: 100%; /* Set width to 100% */
+}
+
+.skill-name {
+    padding: 10px;
+    font-weight: bold;
+    color: #ffffff; /* White text for skill name */
+}
+
+.progress {
+    background-color: #4caf50; /* Green progress */
+    text-align: right; /* Align text to the right */
+    color: #ffffff; /* Text color white */
+    padding: -2px;
+    transition: width 0.5s; /* Smooth transition for progress */
+}
+
+.service-grid, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between items */
+}
+
+.service-box {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.service-box i,
+.service-box h3 {
+    color: #4caf50; /* Green color */
+    transition: color 0.3s;
+}
+
+.service-box p {
+    color: #ffffff; /* White color */
+}
+
+.service-box:hover {
+    background-color: #4caf50; /* Green on hover */
+}
+
+.service-box:hover i,
+.service-box:hover h3 {
+    color: #ffffff; /* White text on hover */
+}
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    background-color: #1e1e1e;
+    border-radius: 50px;
+    gap: 300px;
+}
+
+/* Left-side Contact Info */
+.contact-info {
+    width: 40%;
+    color: #4caf50; /* Green text */
+}
+
+.contact-info h3 {
+    display: flex;
+    align-items: auto;
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #4caf50;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* Right-side Contact Form */
+.contact-form {
+    width: 55%;
+    background-color: ;
+    padding: 60px;
+    border-radius: 40px;
+}
+
+.contact-form h3 {
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group i {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    color: #4caf50;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: mintcream;
+    color: black;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.send-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+.send-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: #45a049;
+}
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #ffffff; /* Icon color */
+    margin: 0 10px;
+    font-size: 24px; /* Icon size */
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #4caf50; /* Change color on hover */
+}
+
+footer {
+    text-align: center; /* Center the footer text */
+    padding: 60px;
+    background-color: #1e1e1e;
+    position: relative; /* Keep it at the bottom */
+    bottom: 0; 
+    width: 100%; 
+}
+
+.animations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none; /* Allows mouse to pass through */
+    overflow: hidden; /* Hides overflow */
+}
+.spider-wipe {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(76, 175, 80, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.copyright {
+    color: #ccc; /* Light grey for copyright */
+}
+
+.buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.home-content {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Space between text and image */
+}
+
+.text-content {
+    max-width: 50%; /* Adjust as needed */
+}
+
+.profile-image {
+    width: 40%; /* Adjust width as needed */
+    border-radius: 10px; /* Rounded corners for the image */
+    margin-left: 20px; /* Space between text and image */
+}
+
+.corner-decoration {
+    position: absolute;
+    width: 80px; /* Size of the decoration */
+    height: 80px; /* Size of the decoration */
+    border: 5px solid #4caf50; /* Green border */
+}
+
+.corner-decoration.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.corner-decoration.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.green-line {
+    position: absolute;
+    background-color: #4caf50; /* Green color */
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    width: 80px; /* Adjust width as needed */
+    height: 5px; /* Height of the line */
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    width: 80px; /* Adjust width as needed */
+    height: 5px; /* Height of the line */
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    width: 80px; /* Adjust width as needed */
+    height: 5px; /* Height of the line */
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 80px; /* Adjust width as needed */
+    height: 5px; /* Height of the line */
+}
