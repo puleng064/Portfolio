@@ -1,0 +1,17 @@
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service-box {
+  border: 1px solid #ddd;
+  padding: 16px;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.service-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
