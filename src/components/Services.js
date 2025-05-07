@@ -7,7 +7,7 @@ const Services = () => (
     <div className="service-grid">
       <div className="service-box">
         <i className="fa-solid fa-laptop-code service-icon"></i>
-        <h3>Web Design</h3>
+        <h3>Web Design2</h3>
         <p>Creating beautiful and responsive designs.</p>
       </div>
       <div className="service-box">
