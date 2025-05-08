@@ -85,70 +85,78 @@
 
 <!-- Skills Section -->
 <section id="skills">
-    <h2>My Skills</h2>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-hard-hat"></i></div>
-            <div class="skill-title">Occupational Health and Safety</div>
-            <p>Knowledge of OHS legislation, risk management, communication, analytical skills, and training abilities.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
-            <div class="skill-title">Project Management Support</div>
-            <p>Skills in planning, scheduling, tracking progress, and coordinating team activities.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-user-shield"></i></div>
-            <div class="skill-title">Security Officer</div>
-            <p>Strong observational skills, effective communication, and proficiency in emergency response.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-desktop"></i></div>
-            <div class="skill-title">Computer Literacy</div>
-            <p>Essential skills for the effective use of computers and technology.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-database"></i></div>
-            <div class="skill-title">Database Management</div>
-            <p>Technical abilities for creating, managing, and optimizing databases.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fas fa-robot"></i></div>
-            <div class="skill-title">Generative AI</div>
-            <p>Experience in utilizing AI models to generate content, such as text and images.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fab fa-java"></i></div>
-            <div class="skill-title">Java</div>
-            <p>A versatile object-oriented programming language used for various applications.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fab fa-html5"></i></div>
-            <div class="skill-title">HTML</div>
-            <p>The core markup language for structuring web pages.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-            <div class="skill-title">CSS</div>
-            <p>Styling language for crafting attractive, responsive designs.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fab fa-js"></i></div>
-            <div class="skill-title">JavaScript</div>
-            <p>Enables dynamic web functionalities and interactive interfaces.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fab fa-react"></i></div>
-            <div class="skill-title">React</div>
-            <p>A JavaScript library for building user interfaces.</p>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon"><i class="fab fa-python"></i></div>
-            <div class="skill-title">Python</div>
-            <p>A high-level language ideal for web development and data science.</p>
-        </div>
+  <h2>My Skills</h2>
+  <div class="skills-grid">
+    <!-- Original skill cards -->
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-hard-hat"></i></div>
+      <div class="skill-title">Occupational Health and Safety</div>
     </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+      <div class="skill-title">Project Management Support</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-user-shield"></i></div>
+      <div class="skill-title">Security Officer</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-desktop"></i></div>
+      <div class="skill-title">Computer Literacy</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-database"></i></div>
+      <div class="skill-title">Database Management</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fas fa-robot"></i></div>
+      <div class="skill-title">Generative AI</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fab fa-java"></i></div>
+      <div class="skill-title">Java</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fab fa-html5"></i></div>
+      <div class="skill-title">HTML</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+      <div class="skill-title">CSS</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fab fa-js"></i></div>
+      <div class="skill-title">JavaScript</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fab fa-react"></i></div>
+      <div class="skill-title">React</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon"><i class="fab fa-python"></i></div>
+      <div class="skill-title">Python</div>
+    </div>
+  </div>
+
+  <!-- New Carousel Section -->
+  <div class="carousel-wrapper">
+    <button onclick="slideLeft()">⬅</button>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel">
+        <div class="card"><i class="fab fa-html5"></i><p>HTML</p></div>
+        <div class="card"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+        <div class="card"><i class="fab fa-js"></i><p>JavaScript</p></div>
+        <div class="card"><i class="fab fa-react"></i><p>React</p></div>
+        <div class="card"><i class="fab fa-python"></i><p>Python</p></div>
+        <div class="card"><i class="fab fa-java"></i><p>Java</p></div>
+        <div class="card"><i class="fas fa-database"></i><p>Database</p></div>
+        <div class="card"><i class="fas fa-robot"></i><p>AI</p></div>
+      </div>
+    </div>
+    <button onclick="slideRight()">➡</button>
+  </div>
 </section>
+
 
 <!-- Contact Section -->
   <section id="contact">
