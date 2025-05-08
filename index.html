@@ -1,178 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Portfolio Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calforniah Mnisi's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-    <main>
-        <aside class="sidebar">
-            <h1 class="title">Portfolio</h1>
-            <ul class="menu" id="menu">
-                <li class="active"><i class="fa-solid fa-house"></i> Home</li>
-                <li><i class="fa-solid fa-user"></i> About Me</li>
-                <li><i class="fa-solid fa-th"></i> Services</li>
-                <li><i class="fa-solid fa-file"></i> Resume</li>
-                <li><i class="fa-solid fa-comments"></i> Contact Me</li>
-            </ul>
-        </aside>
-        
-        <div class="content">
-            <!-- Home Section -->
-            <div class="section-box active-slide">
-                <div class="home-content">
-                    <div class="text-content">
-                        <h2>Hi, I'm Calforniah Mnisi</h2>
-                        <h1 id="typing-effect" style="color: #4caf50;"></h1>
-                        <p>Highly motivated software developer with a passion for creating innovative solutions. I possess a solid foundation in programming languages and problem solving. I am excited to collaborate and contribute to the development of software solutions. Open to any opportunities for learning and growth.</p>
-                        <div class="buttons">
-                            <button class="btn learn-more" style="color: #4caf50;" data-index="1">Learn More</button>
-                            <button class="btn contact-me" style="color: #4caf50;" data-index="4">Contact Me</button>
-                        </div>
-                    </div>
-                    <img src="WhatsApp Image 2025-05-02 at 21.15.27_c236d39f.jpg"class="profile-image">
-                </div>
-                <div class="green-line top-left"></div>
-                <div class="green-line top-right"></div>
-                <div class="green-line bottom-left"></div>
-                <div class="green-line bottom-right"></div>
-            </div>
+    <div class="theme-switcher">
+        <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+        </label>
+        <span class="theme-label">Toggle Theme</span>
+    </div>
+    
+    <canvas id="bgCanvas"></canvas>
 
-            <!-- About Me Section -->
-            <div class="section-box">
-                <h2>About Me</h2>
-                <p>I’m a motivated individual with a passion for software management and continuous learning. I thrive in dynamic environments and love collaborating on innovative solutions. I hold various certifications that equip me with essential skills in the digital world. I’m always looking for ways to challenge myself and expand my skill set, and I find that being in a dynamic, fast-paced work environment helps me do that. I’m also motivated by the chance to collaborate with talented colleagues and contribute to a team effort that produces great results. I hold an ICDL certification, Project Management Support certificate, Security Officer certificate, and Occupational Health and Safety, which has equipped me with essential skills in the digital world. I seek challenging opportunities where I can fully use my skills for success.</p>
-                <h3>My Skills</h3>
-                <div class="skill-container">
-                    <div class="skill"><div class="skill-name">HTML</div><div class="progress" style="width: 95%;">95%</div></div>
-                    <div class="skill"><div class="skill-name">CSS</div><div class="progress" style="width: 90%;">90%</div></div>
-                    <div class="skill"><div class="skill-name">JavaScript</div><div class="progress" style="width: 85%;">85%</div></div>
-                    <div class="skill"><div class="skill-name">AI</div><div class="progress" style="width: 80%;">80%</div></div>
-                    <div class="skill"><div class="skill-name">React</div><div class="progress" style="width: 75%;">75%</div></div>
-                    <div class="skill"><div class="skill-name">Python</div><div class="progress" style="width: 65%;">65%</div></div>
-                    <div class="skill"><div class="skill-name">Database</div><div class="progress" style="width: 60%;">60%</div></div>
-                </div>
-            </div>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="D:\CV_2025-.pdf">Resume</a></li>
+        </ul>
+    </nav>
 
-            <!-- Services Section -->
-            <div class="section-box">
-                <h2>Services</h2>
-                <div class="service-grid">
-                    <div class="service-box">
-                        <i class="fa-solid fa-laptop-code service-icon"></i>
-                        <h3>Web Design</h3>
-                        <p>Creating beautiful and responsive designs.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-code service-icon"></i>
-                        <h3>Web Development</h3>
-                        <p>Building functional web applications.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-paintbrush service-icon"></i>
-                        <h3>Graphic Design</h3>
-                        <p>Creating stunning visuals and branding assets.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-code-branch service-icon"></i>
-                        <h3>Software Development</h3>
-                        <p>Developing efficient and scalable applications.</p>
-                    </div>
-                    <div class="service-box">
-                        <i class="fa-solid fa-database service-icon"></i>
-                        <h3>Database</h3>
-                        <p>Ensuring secure and optimized database performance.</p>
-                    </div>
-                </div>
-            </div>
+    
+    <div class="profile">
+        <img src="D:\puleng.jpg" alt="Calforniah" class="profile-picture" />
+        <h1>CALFORNIAH MNISI</h1>
+        <h1 id="typing-effect" style="color: pink;"></h1>
+        <p>
+            Hello!<br>
+            Highly motivated software developer with a passion for creating innovative solutions. I possess a solid foundation in programming languages and problem solving. I am excited to collaborate and contribute to the development of software solutions. Open to any opportunities for learning and growth.<br>
+            Thank you for taking the time to visit my portfolio. I invite you to explore my projects and connect with me on social media. Join me on this exciting journey of innovation and discovery in the world of Information Technology.
+        </p>
+    </div>
+</header>
 
-            <!-- Resume Section -->
-            <div class="section-box">
-                <h2>Resume</h2>
-                <li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:a1810506-6b29-4de8-8903-f489e2f49576">Resume</a></li>
-            </div>
+<!-- Home Section -->
+<section id="home">
+    <h2>Projects</h2>
+    <ul>
+        <li>
+            <h3>Portfolio</h3>
+<p>This project highlights a personal or professional portfolio website designed to showcase skills, achievements, and past work. It serves as a central hub for potential clients, employers, or collaborators to explore your expertise through organized content, visual elements, and project case studies.</p>
 
-            <!-- Contact Section -->
-            <div class="section-box">
-                <h2>Contact Me</h2>
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <h3><i class="fa-solid fa-phone"></i> Phone</h3>
-                        <p>+27 629 313 765</p>
-                        <h3><i class="fa-solid fa-envelope"></i> Email</h3>
-                        <p>calforniahpuleng@gmail.com</p>
-                        <h3><i class="fa-solid fa-map-marker-alt"></i> Location</h3>
-                        <p>Mbombela, Mpumalanga, South Africa</p>
-                    </div>
-                    <form id="contactForm" class="contact-form">
-                        <h3>Send Me a Message</h3>
-                        <div class="form-group">
-                            <i class="fa-solid fa-user"></i>
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <i class="fa-solid fa-envelope"></i>
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <i class="fa-solid fa-comment"></i>
-                            <textarea placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="send-button">Send</button>
-                    </form>
-                </div>
-            </div>
+            <img src="https://th.bing.com/th/id/R.5faeedaada870b5c23ec4337e06d414b?rik=kDkS9vOuxCb98w&riu=http%3a%2f%2fcodehalweb.com%2fwp-content%2fuploads%2f2023%2f05%2fthumbnail-12.jpg&ehk=pKbeUfmQJcy7%2b3ywkbBuM%2bAagbjCmnNWPuzhf8ApIqQ%3d&risl=&pid=ImgRaw&r=0" alt="Portfolio" />
+            <a href="#"><button class="btn">View Project</button></a>
+        </li>
+        <li>
+            <h3>E-commerce Car Website</h3>
+            <p>This project involves creating a fully functional e-commerce website for buying and selling cars. It includes features such as user accounts, product listings, payment integration, and a responsive design to enhance user experience.</p>
+            <img src="https://images.template.net/wp-content/uploads/2015/11/03173856/Cars-Market-VirtueMart-Theme.jpg" alt="E-commerce Car Website" />
+            <a href="https://puleng064.github.io/ecommerce-site/"><button class="btn">View Project</button></a>
+        </li>
+        <li>
+            <h3>Daily Hustle</h3>
+            <p>A to-do list website designed to help users plan their day efficiently. The application allows users to create, edit, and delete tasks, ensuring they can stay organized and productive throughout their day.</p>
+            <img src="https://i.etsystatic.com/31285703/r/il/05c338/3298577374/il_1080xN.3298577374_5446.jpg" alt="Daily Hustle To-Do List" />
+            <a href=" https://puleng064.github.io/DailyHustle/"><button class="btn">View Project</button></a>
+        </li>
+    </ul>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>I'm Calforniah Mnisi, motivated individual with a passion for software management and continuous learning.I hold an ICDL certification,Project Management Support certificate, Security Officer certificate, Occupational Health and Safety, which has equipped me with essential skills in the digital world.I seek challenging opportunities where I can fully use my skills for the success.</p>
+    <h2>What Motivates Me</h2>
+    <p>I’m motivated by the opportunity to learn and grow in my career. I’m always looking for ways to challenge myself and expand my skill set, and I find that being in a dynamic, fast-paced work environment helps me do that. I’m also motivated by the chance to collaborate with talented colleagues and contribute to a team effort that produces great results.</p>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-hard-hat"></i></div>
+            <div class="skill-title">Occupational Health and Safety</div>
+            <p>Knowledge of OHS legislation, risk management, communication, analytical skills, and training abilities.</p>
         </div>
-    </main>
-
-    <footer>
-        <div class="copyright">
-            <span>© 2025 Calforniah Mnisi</span>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+            <div class="skill-title">Project Management Support</div>
+            <p>Skills in planning, scheduling, tracking progress, and coordinating team activities.</p>
         </div>
-        <div class="social-icons">
-            <a href="https://github.com/puleng064/Software_Dev_Project.git" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/calforniah-mnisi-155580250/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-user-shield"></i></div>
+            <div class="skill-title">Security Officer</div>
+            <p>Strong observational skills, effective communication, and proficiency in emergency response.</p>
         </div>
-    </footer>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-desktop"></i></div>
+            <div class="skill-title">Computer Literacy</div>
+            <p>Essential skills for the effective use of computers and technology.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <div class="skill-title">Database Management</div>
+            <p>Technical abilities for creating, managing, and optimizing databases.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-robot"></i></div>
+            <div class="skill-title">Generative AI</div>
+            <p>Experience in utilizing AI models to generate content, such as text and images.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-java"></i></div>
+            <div class="skill-title">Java</div>
+            <p>A versatile object-oriented programming language used for various applications.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+            <div class="skill-title">HTML</div>
+            <p>The core markup language for structuring web pages.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+            <div class="skill-title">CSS</div>
+            <p>Styling language for crafting attractive, responsive designs.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-js"></i></div>
+            <div class="skill-title">JavaScript</div>
+            <p>Enables dynamic web functionalities and interactive interfaces.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-react"></i></div>
+            <div class="skill-title">React</div>
+            <p>A JavaScript library for building user interfaces.</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-python"></i></div>
+            <div class="skill-title">Python</div>
+            <p>A high-level language ideal for web development and data science.</p>
+        </div>
+    </div>
+</section>
 
-    <script>
-        const sections = document.querySelectorAll('.section-box');
-        const menuItems = document.querySelectorAll('.menu li');
+<!-- Contact Section -->
+  <section id="contact">
+    <div class="contact-card">
+      <div class="contact-header">
+        <h2>Get in Touch</h2>
+        <p>Feel free to reach out or drop a message below</p>
+      </div>
+      <form action="https://formspree.io/f/mrbqkojr" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="_replyto" placeholder="you@example.com" required />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
 
-        // Function to navigate sections
-        function navigate(index) {
-            sections.forEach((section, i) => {
-                section.style.display = (i === index) ? 'block' : 'none';
-            });
-            menuItems.forEach((item, i) => {
-                item.classList.toggle('active', i === index);
-            });
-        }
+  <footer>
+    <h3>Connect with me</h3>
+    <div class="social-icons">
+      <a href="https://github.com/puleng064/Software_Dev_Project.git" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/calforniah-mnisi-155580250/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>© 2025 Calforniah Mnisi. All rights reserved.</p>
+  </footer>
 
-        // Initial setup
-        navigate(0); // Show the home section by default
+  <script>
+    // Typing effect
+    const typingElement = document.getElementById("typing-effect");
+    const text = "A Web Developer";
+    let index = 0;
 
-        // Event listeners for menu clicks
-        menuItems.forEach((item, index) => {
-            item.addEventListener('click', () => navigate(index));
-        });
-
-        // Typing effect
-        const typingElement = document.getElementById("typing-effect");
-        const text = "A Web Developer";
-        let index = 0;
-
-        function type() {
-            if (index < text.length) {
-                typingElement.textContent += text.charAt(index);
-                index++;
-                setTimeout(type, 100);
-            }
-        }
-        type();
-    </script>
+    function type() {
+      if (index < text.length) {
+        typingElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 100);
+      }
+    }
+    type();
+  </script>
 </body>
 </html>
