@@ -9,15 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-    <div class="theme-switcher">
-        <label class="switch">
-            <input type="checkbox" id="themeToggle">
-            <span class="slider"></span>
-        </label>
-        <span class="theme-label">Toggle Theme</span>
-    </div>
+   <body>
+    
+    <label class="switch">
+  <input type="checkbox" id="themeToggle">
+  <span class="slider round"></span>
+</label>
+<canvas id="bgCanvas"></canvas>
+
+    <canvas id="bgCanvas"></canvas>
+</body>
+
     
     <canvas id="bgCanvas"></canvas>
+
 
 <header>
     <nav>
@@ -31,7 +36,7 @@
 
     
     <div class="profile">
-        <img src="https://github.com/puleng064/Portfolio/blob/main/puleng.jpg?raw=true" alt="Calforniah" class="profile-picture" />
+        <img src="D:\puleng.jpg" alt="Calforniah" class="profile-picture" />
         <h1>CALFORNIAH MNISI</h1>
         <h1 id="typing-effect" style="color: pink;"></h1>
         <p>
@@ -51,7 +56,7 @@
 <p>This project highlights a personal or professional portfolio website designed to showcase skills, achievements, and past work. It serves as a central hub for potential clients, employers, or collaborators to explore your expertise through organized content, visual elements, and project case studies.</p>
 
             <img src="https://th.bing.com/th/id/R.5faeedaada870b5c23ec4337e06d414b?rik=kDkS9vOuxCb98w&riu=http%3a%2f%2fcodehalweb.com%2fwp-content%2fuploads%2f2023%2f05%2fthumbnail-12.jpg&ehk=pKbeUfmQJcy7%2b3ywkbBuM%2bAagbjCmnNWPuzhf8ApIqQ%3d&risl=&pid=ImgRaw&r=0" alt="Portfolio" />
-            <a href="https://puleng064.github.io/Portfolio/"><button class="btn">View Project</button></a>
+            <a href="#"><button class="btn">View Project</button></a>
         </li>
         <li>
             <h3>E-commerce Car Website</h3>
@@ -62,8 +67,9 @@
         <li>
             <h3>Daily Hustle</h3>
             <p>A to-do list website designed to help users plan their day efficiently. The application allows users to create, edit, and delete tasks, ensuring they can stay organized and productive throughout their day.</p>
-            <img src="https://i.etsystatic.com/31285703/r/il/05c338/3298577374/il_1080xN.3298577374_5446.jpg" alt="Daily Hustle To-Do List" />
-            <a href=" https://puleng064.github.io/DailyHustle/"><button class="btn">View Project</button></a>
+            <img src="https://i.pinimg.com/originals/06/7a/1a/067a1adc7963241d362cbe2b1516f850.jpg
+        " alt="Daily Hustle To-Do List" />
+            <a href=" https://kgotlelelo15.github.io/DailyHustle/"><button class="btn">View Project</button></a>
         </li>
     </ul>
 </section>
@@ -186,5 +192,93 @@
     }
     type();
   </script>
+ <script>
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+const particleCount = 150;
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.radius = 2;
+    this.vx = Math.random() * 1.5 - 0.75;
+    this.vy = Math.random() * 1.5 - 0.75;
+  }
+
+  move() {
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if (this.x <= 0 || this.x >= canvas.width) this.vx *= -1;
+    if (this.y <= 0 || this.y >= canvas.height) this.vy *= -1;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--dot-color');
+    ctx.fill();
+  }
+}
+
+function drawLines() {
+  let lineColor = getComputedStyle(document.body).getPropertyValue('--line-color');
+
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < 120) {
+        const opacity = 1 - dist / 120;
+        const rgba = lineColor.replace(/[\d.]+\)$/g, opacity + ')');
+        ctx.strokeStyle = rgba;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.move();
+    p.draw();
+  });
+  drawLines();
+  requestAnimationFrame(animate);
+}
+
+function initParticles() {
+  particles = [];
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+}
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  initParticles();
+});
+
+document.getElementById('themeToggle').addEventListener('change', (e) => {
+  document.body.classList.toggle('dark-mode', e.target.checked);
+  document.body.style.background = getComputedStyle(document.body).getPropertyValue('--bg-color');
+});
+
+initParticles();
+animate();
+</script>
+
 </body>
 </html>
