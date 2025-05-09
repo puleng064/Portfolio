@@ -1,150 +1,102 @@
-<script>
-// Typing Effect
-const typingElement = document.getElementById("typing-effect");
-const text = "A Web Developer";
-let index = 0;
-function type() {
-    if (index < text.length) {
-        typingElement.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, 100);
-    }
+
+
+// Typing Effect for Header
+const typingEffect = document.getElementById("typing-effect");
+const text = "Software Developer";
+let i = 0;
+
+function typeText() {
+  if (i < text.length) {
+    typingEffect.textContent += text.charAt(i);
+    i++;
+    setTimeout(typeText, 100); // Adjust speed here (100ms per character)
+  }
 }
-type();
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
+typeText();
+;
+
+function typeWriter() {
+  if (i < text.length) {
+    typingEffect.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 100);
+  }
+}
+
+typeWriter();
+
+// Skill Carousel
+const slideLeft = document.getElementById("slide-left");
+const slideRight = document.getElementById("slide-right");
+const carousel = document.getElementById("carousel");
+
+slideLeft.addEventListener("click", () => {
+  carousel.scrollLeft -= 120;
 });
 
-// Contact form handler (Optional: Add `id="contactForm"` to your form in HTML)
-const form = document.querySelector('form');
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const msg = document.getElementById('message').value.trim();
-
-    const emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
-
-    if (!name || !email || !msg) {
-        alert('Please fill out all fields.');
-        return;
-    }
-
-    if (!emailPattern.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-    }
-
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message: msg })
-    })
-    .then(res => res.json())
-    .then(() => {
-        alert('Message sent successfully!');
-        form.reset();
-    })
-    .catch(() => {
-        alert('Failed to send message. Try again.');
-    });
+slideRight.addEventListener("click", () => {
+  carousel.scrollLeft += 120;
 });
 
-// Particle Background Canvas Animation
-const canvas = document.getElementById('bgCanvas');
-const ctx = canvas.getContext('2d');
+// Particle Background (Optional)
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let particlesArray = [];
-const mouse = { x: null, y: null, radius: 100 };
+let particles = [];
 
-window.addEventListener('mousemove', function(event) {
-    mouse.x = event.x;
-    mouse.y = event.y;
-});
-
-window.addEventListener('resize', function() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    initParticles();
-});
-
-function Particle(x, y, directionX, directionY, size, color) {
-    this.x = x;
-    this.y = y;
-    this.directionX = directionX;
-    this.directionY = directionY;
-    this.size = size;
-    this.color = color;
-
-    this.draw = function() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-    };
-
-    this.update = function() {
-        if (this.x + this.size > canvas.width || this.x - this.size < 0) this.directionX = -this.directionX;
-        if (this.y + this.size > canvas.height || this.y - this.size < 0) this.directionY = -this.directionY;
-        this.x += this.directionX;
-        this.y += this.directionY;
-        this.draw();
-    };
-}
-canvas.style.width = '100%';
-canvas.style.height = '100%';
-
-
-function connectParticles() {
-    for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a + 1; b < particlesArray.length; b++) {
-            let dx = particlesArray[a].x - particlesArray[b].x;
-            let dy = particlesArray[a].y - particlesArray[b].y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < 120) {
-                let opacity = 1 - distance / 120;
-                ctx.strokeStyle = `rgba(255,105,180,${opacity})`; // Pink lines
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                ctx.stroke();
-            }
-        }
-    }
+function Particle(x, y) {
+  this.x = x;
+  this.y = y;
+  this.size = Math.random() * 5 + 1;
+  this.speedX = Math.random() * 2 - 1;
+  this.speedY = Math.random() * 2 - 1;
+  this.color = "rgba(255, 255, 255, 0.5)";
 }
 
-function initParticles() {
-    particlesArray = [];
-    let numberOfParticles = (canvas.width * canvas.height) / 9000;
-    for (let i = 0; i < numberOfParticles; i++) {
-        let size = Math.random() * 2 + 1;
-        let x = Math.random() * (canvas.width - size * 2) + size;
-        let y = Math.random() * (canvas.height - size * 2) + size;
-        let directionX = (Math.random() - 0.5) * 2;
-        let directionY = (Math.random() - 0.5) * 2;
-        let color = 'rgba(255,20,147,1)'; // DeepPink
-        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-    }
-}
+Particle.prototype.update = function () {
+  this.x += this.speedX;
+  this.y += this.speedY;
+  if (this.size > 0.2) this.size -= 0.1;
+};
+
+Particle.prototype.draw = function () {
+  ctx.fillStyle = this.color;
+  ctx.strokeStyle = this.color;
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+  ctx.closePath();
+  ctx.fill();
+};
 
 function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particlesArray.forEach(p => p.update());
-    connectParticles();
-    requestAnimationFrame(animateParticles);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].update();
+    particles[i].draw();
+    if (particles[i].size <= 0.2) {
+      particles.splice(i, 1);
+      i--;
+    }
+  }
+
+  requestAnimationFrame(animateParticles);
 }
 
-initParticles();
-animateParticles();
-</script>
+canvas.addEventListener("mousemove", (event) => {
+  for (let i = 0; i < 5; i++) {
+    particles.push(new Particle(event.x, event.y));
+  }
+});
 
+animateParticles();
+
+// Resize Canvas on Window Resize
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
