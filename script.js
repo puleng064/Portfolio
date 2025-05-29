@@ -38,7 +38,18 @@ slideLeft.addEventListener("click", () => {
 slideRight.addEventListener("click", () => {
   carousel.scrollLeft += 120;
 });
+<script>
+  const carousel = document.getElementById('carousel');
+  const slideAmount = 200; // Adjust this value based on the width of your cards
 
+  document.getElementById('slide-left').addEventListener('click', () => {
+    carousel.scrollBy({ left: -slideAmount, behavior: 'smooth' });
+  });
+
+  document.getElementById('slide-right').addEventListener('click', () => {
+    carousel.scrollBy({ left: slideAmount, behavior: 'smooth' });
+  });
+</script>
 // Particle Background (Optional)
 const canvas = document.getElementById("bgCanvas");
 const ctx = canvas.getContext("2d");
