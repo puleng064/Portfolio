@@ -270,9 +270,9 @@ body.dark .flip-card-back button:hover {
 
 .carousel {
   display: flex;
-  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
-
 .card {
   background-color: var(--card-bg-light);
   padding: 20px;
