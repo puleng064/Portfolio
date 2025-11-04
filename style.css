@@ -103,8 +103,8 @@ header nav ul li a:hover {
 }
 
 .profile-text {
-  width: 50%;
-  padding-left: 50px;
+  width: 70%;
+  padding-left: 40px;
 }
 
 .profile-image {
@@ -115,8 +115,8 @@ header nav ul li a:hover {
 
 .profile-image img {
   width: 200%;
-  max-width: 200px;
-  border-radius: 50%;
+  max-width: 300px;
+  border-radius: 70%;
 }
 
 /* Projects Section */
@@ -415,6 +415,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
