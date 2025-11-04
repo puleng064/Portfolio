@@ -116,8 +116,8 @@ header nav ul li a:hover {
 
 .profile-image img {
   width: 250px;          /* Equal width */
-  height: 150px;         /* Equal height */
-  border-radius: 50%;    /* Makes it a perfect circle */
+  height: 250px;         /* Equal height */
+  border-radius: 70%;    /* Makes it a perfect circle */
   object-fit: cover;     /* Ensures the image fills the circle nicely */
   border: 4px solid #fff; /* Optional white border */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Optional soft shadow */
@@ -419,6 +419,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
