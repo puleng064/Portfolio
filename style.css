@@ -281,23 +281,27 @@ body.dark-mode .skills-carousel {
 }
 
 .carousel-container {
-  overflow: hidden; /* hide extra content */
-  width: 100%;      /* full width of parent */
-  position: relative;
+  width: 100%;
+  overflow: hidden; /* hides cards outside view */
 }
 
 .carousel-track {
   display: flex;
-  gap: 20px; /* space between cards */
-  overflow-x: auto; /* allow horizontal scroll */
-  scroll-behavior: smooth; /* smooth scrolling */
-  padding: 10px;
-  scroll-snap-type: x mandatory; /* optional for snapping effect */
+  gap: 20px;
+  animation: scroll 20s linear infinite;
 }
 
-/* skill-card remains the same */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* moves exactly half (the duplicated part) */
+  }
+}
+
 .skill-card {
-  flex: 0 0 120px;  /* prevents shrinking */
+  flex: 0 0 120px; /* fixed width */
   width: 200px;
   height: 120px;
   display: flex;
@@ -329,12 +333,6 @@ body.dark-mode .skill-card i {
 
 .skill-card:hover {
   transform: scale(1.05);
-}
-
-/* smooth scrolling animation */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
 
 /* Contact Section */
@@ -431,6 +429,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
