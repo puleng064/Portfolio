@@ -26,18 +26,12 @@ function typeWriter() {
 
 typeWriter();
 
-// Skill Carousel
-const slideLeft = document.getElementById("slide-left");
-const slideRight = document.getElementById("slide-right");
-const carousel = document.getElementById("carousel");
+<script>
+const track = document.querySelector('.carousel-track');
+track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+</script>
 
-slideLeft.addEventListener("click", () => {
-  carousel.scrollLeft -= 120;
-});
-
-slideRight.addEventListener("click", () => {
-  carousel.scrollLeft += 120;
-});
 // Particle Background (Optional)
 const canvas = document.getElementById("bgCanvas");
 const ctx = canvas.getContext("2d");
@@ -99,3 +93,4 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
