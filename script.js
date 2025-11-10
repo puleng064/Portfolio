@@ -21,11 +21,11 @@ const slideRight = document.getElementById("slide-right");
 const carousel = document.getElementById("carousel");
 
 slideLeft.addEventListener("click", () => {
-  carousel.scrollLeft -= 120;
+  carousel.scrollLeft -= 140;
 });
 
 slideRight.addEventListener("click", () => {
-  carousel.scrollLeft += 120;
+  carousel.scrollLeft += 140;
 });
 
 // Pause carousel animation on hover (if using CSS animation)
@@ -97,3 +97,4 @@ window.addEventListener("resize", () => {
   canvas.height = window.innerHeight;
 });
 </script>
+
