@@ -260,8 +260,8 @@ body.dark .flip-card-back button:hover {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.skills-slider {
-  background-color: #102a71; /* Deep professional blue */
+.skills-carousel {
+  background-color: #102a71; /* deep professional blue */
   color: #fff;
   text-align: center;
   padding: 40px 0;
@@ -271,49 +271,53 @@ body.dark .flip-card-back button:hover {
 .skills-title {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
-.slider {
+.carousel-container {
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
-.slide-track {
+.carousel-track {
   display: flex;
-  width: calc(250px * 14);
-  animation: scroll 30s linear infinite;
+  width: calc(250px * 20);
+  animation: scroll 25s linear infinite;
 }
 
-.slide {
+.skill-card {
   background: #ffffff;
   color: #000;
   width: 200px;
   height: 120px;
-  margin: 0 15px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 15px;
+  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
-.slide i {
+.skill-card i {
   font-size: 2.2rem;
-  margin-bottom: 8px;
   color: #102a71;
+  margin-bottom: 6px;
 }
 
-.slide:hover {
+.skill-card:hover {
   transform: scale(1.05);
 }
 
+/* smooth scrolling animation */
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
 
 /* Contact Section */
 #contact {
@@ -409,6 +413,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
