@@ -1,5 +1,4 @@
-
-
+<script>
 // Typing Effect for Header
 const typingEffect = document.getElementById("typing-effect");
 const text = "Software Developer";
@@ -9,30 +8,34 @@ function typeText() {
   if (i < text.length) {
     typingEffect.textContent += text.charAt(i);
     i++;
-    setTimeout(typeText, 100); // Adjust speed here (100ms per character)
+    setTimeout(typeText, 100);
   }
 }
 
+// Start typing effect
 typeText();
-;
 
-function typeWriter() {
-  if (i < text.length) {
-    typingEffect.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, 100);
-  }
+// Carousel Scroll
+const slideLeft = document.getElementById("slide-left");
+const slideRight = document.getElementById("slide-right");
+const carousel = document.getElementById("carousel");
+
+slideLeft.addEventListener("click", () => {
+  carousel.scrollLeft -= 120;
+});
+
+slideRight.addEventListener("click", () => {
+  carousel.scrollLeft += 120;
+});
+
+// Pause carousel animation on hover (if using CSS animation)
+const track = document.querySelector('.carousel-track');
+if (track) {
+  track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+  track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
 }
 
-typeWriter();
-
-<script>
-const track = document.querySelector('.carousel-track');
-track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
-track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
-</script>
-
-// Particle Background (Optional)
+// Particle Background
 const canvas = document.getElementById("bgCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -93,4 +96,4 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
-
+</script>
