@@ -288,13 +288,16 @@ body.dark-mode .skills-carousel {
 
 .carousel-track {
   display: flex;
-  gap: 20px; /* spacing between cards */
-  flex-wrap: nowrap; /* prevent wrapping to next line */
-  animation: scroll 20s linear infinite;
+  gap: 20px; /* space between cards */
+  overflow-x: auto; /* allow horizontal scroll */
+  scroll-behavior: smooth; /* smooth scrolling */
+  padding: 10px;
+  scroll-snap-type: x mandatory; /* optional for snapping effect */
 }
+
 /* skill-card remains the same */
 .skill-card {
-  flex: 0 0 auto;  /* prevents shrinking */
+  flex: 0 0 120px;  /* prevents shrinking */
   width: 200px;
   height: 120px;
   display: flex;
@@ -428,6 +431,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
