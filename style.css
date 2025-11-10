@@ -261,11 +261,17 @@ body.dark .flip-card-back button:hover {
 }
 
 .skills-carousel {
-  background-color: #333; /* deep professional blue */
-  color: #fff;
+  background-color: var(--bg-light);  /* matches your website’s main background */
+  color: var(--text-light);
   text-align: center;
   padding: 40px 0;
   overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .skills-carousel {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
 }
 
 .skills-title {
@@ -282,13 +288,12 @@ body.dark .flip-card-back button:hover {
 
 .carousel-track {
   display: flex;
-  width: calc(250px * 20);
   animation: scroll 25s linear infinite;
 }
 
 .skill-card {
-  background: #F4F4F4;
-  color: #000;
+  background: var(--card-bg-light);
+  color: var(--text-light);
   width: 200px;
   height: 120px;
   border-radius: 15px;
@@ -299,13 +304,22 @@ body.dark .flip-card-back button:hover {
   justify-content: center;
   margin: 0 15px;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+body.dark-mode .skill-card {
+  background: var(--card-bg-dark);
+  color: var(--text-dark);
 }
 
 .skill-card i {
   font-size: 2.2rem;
-  color: #102a71;
+  color: var(--accent-light);
   margin-bottom: 6px;
+}
+
+body.dark-mode .skill-card i {
+  color: var(--accent-dark);
 }
 
 .skill-card:hover {
@@ -317,7 +331,6 @@ body.dark .flip-card-back button:hover {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
 
 /* Contact Section */
 #contact {
@@ -413,6 +426,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
