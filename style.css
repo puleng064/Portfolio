@@ -288,7 +288,7 @@ body.dark-mode .skills-carousel {
 
 .carousel-track {
   display: flex;
-  animation: scroll 18s linear infinite;
+  animation: scroll 15s linear infinite;
 }
 
 .skill-card {
@@ -426,6 +426,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
