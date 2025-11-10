@@ -283,6 +283,7 @@ body.dark-mode .skills-carousel {
 .carousel-container {
   width: 100%;
   overflow: hidden; /* hides cards outside view */
+  padding: 20px 0;  /* extra vertical space */
 }
 
 .carousel-track {
@@ -301,9 +302,9 @@ body.dark-mode .skills-carousel {
 }
 
 .skill-card {
-  flex: 0 0 120px;  
-  width: 200px;
-  height: 120px;
+  flex: 0 0 150px;    /* base width for flex layout */
+  width: 250px;        /* larger width */
+  height: 150px;       /* taller height */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -312,19 +313,22 @@ body.dark-mode .skills-carousel {
   color: var(--text-light);
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  margin: 0 10px;
+  margin: 0 15px;      /* slightly more gap between cards */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card i {
+  font-size: 3rem;      /* bigger icon */
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  font-size: 1.1rem;    /* slightly bigger text */
 }
 
 body.dark-mode .skill-card {
   background: var(--card-bg-dark);
   color: var(--text-dark);
-}
-
-.skill-card i {
-  font-size: 2.2rem;
-  color: var(--accent-light);
-  margin-bottom: 6px;
 }
 
 body.dark-mode .skill-card i {
@@ -431,6 +435,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
