@@ -260,68 +260,59 @@ body.dark .flip-card-back button:hover {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Skills Section */
-.skills-section {
-  padding: 50px 0;
-}
-
-.skills-section h2 {
+.skills-slider {
+  background-color: #102a71; /* Deep professional blue */
+  color: #fff;
   text-align: center;
-}
-
-.carousel-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-container {
+  padding: 40px 0;
   overflow: hidden;
-  width: 80%;
 }
 
-.carousel {
+.skills-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track {
   display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-.card {
-  background-color: var(--card-bg-light);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 120px;
-  transition: background-color 0.3s ease;
+  width: calc(250px * 14);
+  animation: scroll 30s linear infinite;
 }
 
-body.dark .card {
-  background-color: var(--card-bg-dark);
+.slide {
+  background: #ffffff;
+  color: #000;
+  width: 200px;
+  height: 120px;
+  margin: 0 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
 
-.card i {
-  font-size: 3rem;
+.slide i {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  color: #102a71;
 }
 
-.carousel-btn {
-  background-color: var(--accent-light);
-  color: var(--text-light);
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
+.slide:hover {
+  transform: scale(1.05);
 }
 
-.carousel-btn:hover {
-  background-color: var(--btn-hover-light);
-}
-
-body.dark .carousel-btn {
-  background-color: var(--accent-dark);
-  color: var(--text-dark);
-}
-
-body.dark .carousel-btn:hover {
-  background-color: var(--btn-hover-dark);
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Contact Section */
@@ -418,6 +409,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
