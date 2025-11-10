@@ -1,11 +1,11 @@
 /* General Styles */
 :root {
-  --bg-light: #0F172A;
+  --bg-light: #1E293B;
   --bg-dark: #121212;
   --text-light: #000;
   --text-dark: #f4f4f4;
-  --accent-light: #EAB308;
-  --accent-dark: #EAB308;
+  --accent-light: #C8D8E4;
+  --accent-dark: #C8D8E4;
   --card-bg-light: #fff;
   --card-bg-dark: #333;
   --btn-bg-light: #333;
@@ -418,6 +418,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
