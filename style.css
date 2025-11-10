@@ -261,7 +261,7 @@ body.dark .flip-card-back button:hover {
 }
 
 .skills-carousel {
-  background-color: #102a71; /* deep professional blue */
+  background-color: #333; /* deep professional blue */
   color: #fff;
   text-align: center;
   padding: 40px 0;
@@ -413,6 +413,7 @@ body.dark footer .social-icons a {
 body.dark footer .social-icons a:hover {
   color: var(--btn-hover-dark);
 }
+
 
 
 
