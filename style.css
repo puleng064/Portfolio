@@ -301,7 +301,7 @@ body.dark-mode .skills-carousel {
 }
 
 .skill-card {
-  flex: 0 0 120px; /* fixed width */
+  flex: 0 0 120px;  
   width: 200px;
   height: 120px;
   display: flex;
@@ -313,7 +313,7 @@ body.dark-mode .skills-carousel {
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   margin: 0 10px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 body.dark-mode .skill-card {
@@ -333,11 +333,10 @@ body.dark-mode .skill-card i {
 
 .skill-card:hover {
   transform: scale(1.05);
-  /* Soft dark glow */
-  box-shadow: 0 0 15px rgba(51, 51, 51, 0.6), 0 0 25px rgba(51, 51, 51, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 
+    0 0 15px rgba(255, 182, 193, 0.7), /* noticeable pink glow */
+    0 0 30px rgba(255, 182, 193, 0.5);
 }
-
 /* Contact Section */
 #contact {
   background-color: var(--card-bg-light);
